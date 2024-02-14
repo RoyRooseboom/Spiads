@@ -15,11 +15,23 @@ public class Inschrijven {
     private String achternaam;
     @Column()
     private String email;
+    @Column()
+    private String adress;
+    @Column()
+    private String postcode;
+    @Column()
+    private String woonplaats;
+    @Column()
+    private String iban;
+    @Column(columnDefinition="TEXT")
+    private String handtekening;
 
 
     public void setId(long id) {
         this.id = id;
     }
+
+    public long getId() { return id; }
 
     public String getNaam() {
         return naam;
@@ -44,4 +56,24 @@ public class Inschrijven {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getAdress() { return adress; }
+
+    public void setAdress(String adress) { this.adress = adress; }
+
+    public String getPostcode() { return postcode; }
+
+    public void setPostcode(String postcode) { this.postcode = postcode; }
+
+    public String getWoonplaats() { return woonplaats; }
+
+    public void setWoonplaats(String woonplaats) { this.woonplaats = woonplaats; }
+
+    public String getIban() { return iban; }
+
+    public void setIban(String iban) { this.iban = iban; }
+
+    public String getHandtekening() { return handtekening; }
+
+    public void setHandtekening(String handtekening) { this.handtekening = handtekening; }
 }
