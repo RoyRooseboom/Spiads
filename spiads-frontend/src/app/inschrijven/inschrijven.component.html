@@ -1,4 +1,8 @@
 <form>
+    <p>
+        <span *ngIf="error" style="color: red"> <b>{{error}}</b> </span>
+    </p>
+
     <label for="naam">Naam</label>
     <br>
     <input id="naam" #naam>
@@ -7,9 +11,30 @@
     <br>
     <input id="achternaam" #achternaam>
     <br><br>
-    <label for="email">email</label>
+    <label for="email">E-mail</label>
     <br>
     <input type="email" id="email" #email>
     <br><br>
-    <input type="button" value="Submit" (click)="send()">
+    <label for="adress">Adress</label>
+    <br>
+    <input id="adress" #adress>
+    <br><br>
+    <label for="postcode">Postcode</label>
+    <br>
+    <input id="postcode" #postcode>
+    <br><br>
+    <label for="woonplaats">Woonplaats</label>
+    <br>
+    <input id="woonplaats" #woonplaats>
+    <br><br>
+    <label for="iban">IBAN</label>
+    <br>
+    <input id="iban" #iban>
+
+    <br><br>
+    <label>Handtekening:</label>
+    <app-signature-pad #handtekening></app-signature-pad>
+    <br><br>
+
+    <input type="button" value="Verstuur" (click)="emptyCheck()">
 </form>
