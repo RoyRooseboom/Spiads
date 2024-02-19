@@ -1,40 +1,50 @@
-<form>
-    <p>
-        <span *ngIf="error" style="color: red"> <b>{{error}}</b> </span>
-    </p>
+<div class="container text-center">
+    <div class="row">
+        <form>
+            <p *ngIf="error" class="error">
+                <b>{{error}}</b>
+            </p>
+        
+            <div class="input-group">
+                <label for="naam" class="input-group-text">Naam</label>
+                <input id="naam" class="form-control" #naam >
+            </div>
 
-    <label for="naam">Naam</label>
-    <br>
-    <input id="naam" #naam>
-    <br><br>
-    <label for="achternaam">Achternaam</label>
-    <br>
-    <input id="achternaam" #achternaam>
-    <br><br>
-    <label for="email">E-mail</label>
-    <br>
-    <input type="email" id="email" #email>
-    <br><br>
-    <label for="adress">Adress</label>
-    <br>
-    <input id="adress" #adress>
-    <br><br>
-    <label for="postcode">Postcode</label>
-    <br>
-    <input id="postcode" #postcode>
-    <br><br>
-    <label for="woonplaats">Woonplaats</label>
-    <br>
-    <input id="woonplaats" #woonplaats>
-    <br><br>
-    <label for="iban">IBAN</label>
-    <br>
-    <input id="iban" #iban>
+            <div class="input-group">
+                <label for="achternaam" class="input-group-text">Achternaam</label>
+                <input id="achternaam" class="form-control" #achternaam>
+            </div>
 
-    <br><br>
-    <label>Handtekening:</label>
-    <app-signature-pad #handtekening></app-signature-pad>
-    <br><br>
+            <div class="input-group">
+                <label for="email" class="input-group-text">E-mail</label>
+                <input type="email" id="email" class="form-control" #email>
+            </div>
 
-    <input type="button" value="Verstuur" (click)="emptyCheck()">
-</form>
+            <div class="input-group">
+                <label for="adress" class="input-group-text">Adress</label>
+                <input id="adress" class="form-control" #adress>
+            </div>
+
+            <div class="input-group">
+                <label for="postcode" class="input-group-text">Postcode</label> 
+                <input id="postcode" class="form-control" #postcode>
+            </div>
+
+            <div class="input-group">
+                <label for="woonplaats" class="input-group-text">Woonplaats</label>
+                <input id="woonplaats" class="form-control" #woonplaats>
+            </div>
+
+            <div class="input-group">
+                <label for="iban" class="input-group-text">IBAN</label>
+                <input id="iban" class="form-control" #iban>
+            </div>
+
+            <label>Handtekening:</label>
+            <app-signature-pad #handtekening></app-signature-pad>
+
+        
+            <input type="button" value="Verstuur" (click)="emptyCheck()" class="btn btn-primary">
+        </form>
+    </div>
+</div>

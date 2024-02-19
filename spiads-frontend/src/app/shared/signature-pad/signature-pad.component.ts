@@ -13,7 +13,7 @@ export class SignaturePadComponent {
   signatureImg!: string;
 
   ngAfterViewInit() {
-    this.signaturePad = new SignaturePad(this.canvasEl.nativeElement);
+    this.signaturePad = new SignaturePad(this.canvasEl.nativeElement, {});
   }
 
   startDrawing(event: Event) {}
