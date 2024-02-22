@@ -1,0 +1,9 @@
+<div class="form-floating">
+    <input id="id" placeholder="{{placeholder}}" class="form-control" [(ngModel)]="ngObject" name="{{name}}" #modelName="ngModel" required>
+    <label for="id">{{label}}
+        <div [hidden]="modelName.valid || modelName.pristine"
+            class="alert alert-danger niet-valid">
+            {{verplichtText}}
+        </div>
+    </label>
+</div>

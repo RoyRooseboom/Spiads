@@ -1,50 +1,81 @@
 <div class="container text-center">
     <div class="row">
-        <form>
-            <p *ngIf="error" class="error">
-                <b>{{error}}</b>
-            </p>
-        
-            <div class="input-group">
-                <label for="naam" class="input-group-text">Naam</label>
-                <input id="naam" class="form-control" #naam >
+
+        <form #inschrijfForm="ngForm" (ngSubmit)="send()">
+            <div class="form-floating">
+                <input id="naam" placeholder="Naam" class="form-control" [(ngModel)]="lid.naam" name="naam" #naam="ngModel" required>
+                <label for="naam">Naam
+                    <div [hidden]="naam.valid || naam.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
             </div>
 
-            <div class="input-group">
-                <label for="achternaam" class="input-group-text">Achternaam</label>
-                <input id="achternaam" class="form-control" #achternaam>
+            <div class="form-floating">
+                <input id="achternaam" placeholder="Achternaam" class="form-control" [(ngModel)]="lid.achternaam" name="achternaam" #achternaam="ngModel" required>
+                <label for="achternaam">Achternaam
+                    <div [hidden]="achternaam.valid || achternaam.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
             </div>
 
-            <div class="input-group">
-                <label for="email" class="input-group-text">E-mail</label>
-                <input type="email" id="email" class="form-control" #email>
+            <div class="form-floating">
+                <input type="email" id="email" placeholder="E-mail" class="form-control" [(ngModel)]="lid.email" name="email" #email="ngModel" required>
+                <label for="email">E-mail
+                    <div [hidden]="email.valid || email.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
             </div>
 
-            <div class="input-group">
-                <label for="adress" class="input-group-text">Adress</label>
-                <input id="adress" class="form-control" #adress>
+            <div class="form-floating">
+                <input id="adress" placeholder="Adress" class="form-control" [(ngModel)]="lid.adress" name="adress" #adress="ngModel" required>
+                <label for="adress">Adress
+                    <div [hidden]="adress.valid || adress.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
             </div>
 
-            <div class="input-group">
-                <label for="postcode" class="input-group-text">Postcode</label> 
-                <input id="postcode" class="form-control" #postcode>
+            <div class="form-floating">
+                <input id="postcode" placeholder="Postcode" class="form-control" [(ngModel)]="lid.postcode" name="postcode" #postcode="ngModel" required>
+                <label for="postcode">Postcode
+                    <div [hidden]="postcode.valid || postcode.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
             </div>
 
-            <div class="input-group">
-                <label for="woonplaats" class="input-group-text">Woonplaats</label>
-                <input id="woonplaats" class="form-control" #woonplaats>
+            <div class="form-floating">
+                <input id="woonplaats" placeholder="Woonplaats" class="form-control" [(ngModel)]="lid.woonplaats" name="woonplaats" #woonplaats="ngModel" required>
+                <label for="woonplaats">Woonplaats
+                    <div [hidden]="woonplaats.valid || woonplaats.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
             </div>
 
-            <div class="input-group">
-                <label for="iban" class="input-group-text">IBAN</label>
-                <input id="iban" class="form-control" #iban>
+            <div class="form-floating">
+                <input id="iban" placeholder="iban" class="form-control" [(ngModel)]="lid.iban" name="iban" #iban="ngModel" required>
+                <label for="iban">IBAN
+                    <div [hidden]="iban.valid || iban.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
             </div>
 
             <label>Handtekening:</label>
             <app-signature-pad #handtekening></app-signature-pad>
 
-        
-            <input type="button" value="Verstuur" (click)="emptyCheck()" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary" [disabled]="!inschrijfForm.form.valid">Submit</button>
         </form>
     </div>
 </div>
