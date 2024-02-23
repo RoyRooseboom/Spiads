@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { InschrijvenService } from './service/inschrijven.service';
 import { SignaturePadComponent } from '../shared/signature-pad/signature-pad.component';
 
