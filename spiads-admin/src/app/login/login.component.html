@@ -1,9 +1,27 @@
-<form>
-    <div>
-        <input><label>Gebruikersnaam</label>
+<div class="container text-center">
+    <div class="row">
+        <form #inlogForm="ngForm" (ngSubmit)="send()">
+            <div class="form-floating">
+                <input id="gebruiker" placeholder="Gebruikersnaam" class="form-control" [(ngModel)]="user.gebruikersnaam" name="gebruiker" #gebruiker="ngModel" required>
+                <label for="gebruiker">Gebruikersnaam
+                    <div [hidden]="gebruiker.valid || gebruiker.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
+            </div>
+            <div class="form-floating">
+                <input id="wachtwoord" placeholder="Wachtwoord" class="form-control" [(ngModel)]="user.wachtwoord" name="wachtwoord" #wachtwoord="ngModel" required>
+                <label for="wachtwoord">Wachtwoord
+                    <div [hidden]="wachtwoord.valid || wachtwoord.pristine"
+                        class="alert alert-danger niet-valid">
+                        {{verplichtText}}
+                    </div>
+                </label>
+            </div>
+
+            <button type="button" routerLink="/home" class="btn btn-primary">To Home</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!inlogForm.form.valid">Login</button>
+        </form>
     </div>
-    <div>
-        <input><label>Wachtwoord</label>
-    </div>
-    <button routerLink="/home">To Home</button>
-</form>
+</div>
