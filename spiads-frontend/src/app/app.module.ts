@@ -7,15 +7,9 @@ import { InschrijvenComponent } from './inschrijven/inschrijven.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignaturePadComponent } from './shared/signature-pad/signature-pad.component';
 import { FormsModule } from '@angular/forms';
-import { TekstveldComponent } from './tekstveld/tekstveld.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    InschrijvenComponent,
-    SignaturePadComponent,
-    TekstveldComponent,
-  ],
+  declarations: [AppComponent, InschrijvenComponent, SignaturePadComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [SignaturePadComponent],
   bootstrap: [AppComponent],
