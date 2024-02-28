@@ -2,9 +2,9 @@
     <div class="row">
         <form #inlogForm="ngForm" (ngSubmit)="send()">
             <div class="form-floating">
-                <input id="gebruiker" placeholder="Gebruikersnaam" class="form-control" [(ngModel)]="user.gebruikersnaam" name="gebruiker" #gebruiker="ngModel" required>
-                <label for="gebruiker">Gebruikersnaam
-                    <div [hidden]="gebruiker.valid || gebruiker.pristine"
+                <input id="email" type="email" placeholder="E-mail" class="form-control" [(ngModel)]="user.email" name="email" #email="ngModel" required>
+                <label for="email">E-mail
+                    <div [hidden]="email.valid || email.pristine"
                         class="alert alert-danger niet-valid">
                         {{verplichtText}}
                     </div>
