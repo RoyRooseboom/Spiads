@@ -5,9 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class InschrijvenService {
-    @Autowired
-    InschrijvenRepository inschrijvenRepository;
+public class AdministratieService {
 
-    public void addInschrijven(Lid lid) { inschrijvenRepository.save(lid); }
+    @Autowired
+    AdministratieRepository administratieRepository;
+
+    public Iterable<Lid> getAllLeden() { return administratieRepository.findAll(); }
 }
