@@ -1,47 +1,44 @@
 <div class="container text-center">
     <div class="row">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="achternaam" matSortDirection="asc" class="mat-elevation-z8">
             <ng-container matColumnDef="naam">
-                <th mat-header-cell *matHeaderCellDef> Naam </th>
-                <td mat-cell *matCellDef="let element">  </td>
-              </ng-container>
-
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Naam </th>
+                <td mat-cell *matCellDef="let element"> {{element.naam}} </td>
+            </ng-container>
             
             <ng-container matColumnDef="achternaam">
-                <th mat-header-cell *matHeaderCellDef> Achternaam </th>
-                <td mat-cell *matCellDef="let element">  </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Achternaam </th>
+                <td mat-cell *matCellDef="let element"> {{element.achternaam}} </td>
             </ng-container>
 
-            
             <ng-container matColumnDef="email">
-                <th mat-header-cell *matHeaderCellDef> E-mail </th>
-                <td mat-cell *matCellDef="let element">  </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </th>
+                <td mat-cell *matCellDef="let element"> {{element.email}} </td>
             </ng-container>
-
             
             <ng-container matColumnDef="adress">
-                <th mat-header-cell *matHeaderCellDef> Adress </th>
-                <td mat-cell *matCellDef="let element">  </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Adress </th>
+                <td mat-cell *matCellDef="let element"> {{element.adress}} </td>
             </ng-container>
 
             <ng-container matColumnDef="postcode">
-                <th mat-header-cell *matHeaderCellDef> Postcode </th>
-                <td mat-cell *matCellDef="let element">  </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Postcode </th>
+                <td mat-cell *matCellDef="let element"> {{element.postcode}} </td>
             </ng-container>
 
             <ng-container matColumnDef="woonplaats">
-                <th mat-header-cell *matHeaderCellDef> Woonplaats </th>
-                <td mat-cell *matCellDef="let element">  </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Woonplaats </th>
+                <td mat-cell *matCellDef="let element"> {{element.woonplaats}} </td>
             </ng-container>
 
             <ng-container matColumnDef="iban">
-                <th mat-header-cell *matHeaderCellDef> Iban </th>
-                <td mat-cell *matCellDef="let element">  </td>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Iban </th>
+                <td mat-cell *matCellDef="let element"> {{element.iban}} </td>
             </ng-container>
 
             <ng-container matColumnDef="handtekening">
                 <th mat-header-cell *matHeaderCellDef> Handtekening </th>
-                <td mat-cell *matCellDef="let element">  </td>
+                <td mat-cell *matCellDef="let element"> <img src="{{element.handtekening}}" class="img-handtekening"/> </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -50,4 +47,3 @@
     </div>
 </div>
 
-<button type="button" (click)="getLeden()">Get Leden</button>

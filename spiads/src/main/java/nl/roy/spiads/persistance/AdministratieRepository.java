@@ -1,9 +1,9 @@
 package nl.roy.spiads.persistance;
 
-import nl.roy.spiads.domain.Inschrijven;
+import nl.roy.spiads.domain.Lid;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public interface AdministratieRepository extends CrudRepository<Inschrijven, Long> {
+public interface AdministratieRepository extends CrudRepository<Lid, Long> {
 }

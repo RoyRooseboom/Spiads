@@ -4,7 +4,7 @@ package nl.roy.spiads.domain;
 import jakarta.persistence.*;
 
 @Entity
-public class Inschrijven {
+public class Lid {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

@@ -1,6 +1,6 @@
 package nl.roy.spiads.rest;
 
-import nl.roy.spiads.domain.Inschrijven;
+import nl.roy.spiads.domain.Lid;
 import nl.roy.spiads.persistance.AdministratieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,7 +15,7 @@ public class AdministratieEndPoint {
 
     @CrossOrigin
     @GetMapping("administratie/get")
-    public Iterable<Inschrijven> getAllLeden() {
+    public Iterable<Lid> getAllLeden() {
         return administratieService.getAllLeden();
     }
 }

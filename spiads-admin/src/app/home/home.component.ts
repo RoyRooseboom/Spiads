@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Lid } from '../entities/lid';
 import { HomeService } from './service/home.service';
 import { map } from 'rxjs';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'home',
@@ -10,6 +11,8 @@ import { map } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  @ViewChild(MatSort) sort!: MatSort;
+
   displayedColumns: string[] = [
     'naam',
     'achternaam',
@@ -24,7 +27,7 @@ export class HomeComponent {
 
   constructor(private homeService: HomeService) {}
 
-  getLeden() {
+  ngOnInit() {
     this.homeService
       .getAllLeden()
       .pipe(
@@ -33,5 +36,9 @@ export class HomeComponent {
         })
       )
       .subscribe();
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 }
