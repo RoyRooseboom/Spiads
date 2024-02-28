@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  user: { gebruikersnaam: string; wachtwoord: string } = {
-    gebruikersnaam: '',
+  user: { email: string; wachtwoord: string } = {
+    email: '',
     wachtwoord: '',
   };
 
