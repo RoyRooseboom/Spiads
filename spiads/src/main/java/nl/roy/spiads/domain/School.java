@@ -13,6 +13,10 @@ public class School {
     @Column(nullable = false, unique = true)
     private String schoolNaam;
 
-    @OneToMany
+    @Column(unique = true)
+    private String url;
+
+    @OneToMany(mappedBy = "school")
     private List<Lid> leden;
+
 }
