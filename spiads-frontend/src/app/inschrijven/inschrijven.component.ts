@@ -1,6 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
 import { InschrijvenService } from './service/inschrijven.service';
 import { SignaturePadComponent } from '../shared/signature-pad/signature-pad.component';
+import { catchError, of, tap } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'inschrijven',
@@ -32,6 +34,9 @@ export class InschrijvenComponent {
     {} as SignaturePadComponent;
 
   verplichtText = 'Dit veldt is verplicht';
+  toastHeader = '';
+  toastText = '';
+  show: boolean = false;
 
   constructor(private inschrijvenService: InschrijvenService) {}
 
@@ -52,7 +57,26 @@ export class InschrijvenComponent {
 
   send() {
     if (this.checkSignaturePad()) {
-      this.inschrijvenService.addInschrijven(this.lid);
+      this.inschrijvenService
+        .addInschrijven(this.lid)
+        .pipe(
+          tap((resp: HttpResponse<any>) => {
+            this.toastHeader = 'Succes!';
+            this.toastText = 'Inschrijving is met succes verstuurd.';
+            this.show = true;
+          }),
+          catchError((err) => {
+            this.toastHeader = 'Failed!';
+            this.toastText = 'Inschrijving Mislukt!';
+            this.show = true;
+
+            console.error('Error occured: ', err);
+            return of(-1);
+          })
+        )
+        .subscribe();
     }
+
+    this.show = false;
   }
 }

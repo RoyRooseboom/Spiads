@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,9 @@ export class InschrijvenService {
 
   baseUrl = 'http://localhost:8080';
 
-  addInschrijven(body: object) {
-    this.http.post(`${this.baseUrl}/inschrijven/add`, body).subscribe();
+  addInschrijven(body: object): Observable<HttpResponse<any>> {
+    return this.http.post(`${this.baseUrl}/inschrijven/add`, body, {
+      observe: 'response',
+    });
   }
 }

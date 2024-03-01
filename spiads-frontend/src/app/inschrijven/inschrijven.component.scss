@@ -24,3 +24,16 @@ app-signature-pad {
     align-items: center;
     margin-bottom: 1rem;
 }
+
+.toast-positie {
+    position: absolute;
+    bottom: 1rem;
+    left: 36rem;
+    background-color: white;
+}
+
+@media only screen and (max-width: 440px) {
+    .toast-positie {
+        left: 2rem;
+    }
+}
