@@ -7,10 +7,17 @@ import { InschrijvenComponent } from './inschrijven/inschrijven.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignaturePadComponent } from './shared/signature-pad/signature-pad.component';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, InschrijvenComponent, SignaturePadComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    NgbModule,
+  ],
   providers: [SignaturePadComponent],
   bootstrap: [AppComponent],
 })

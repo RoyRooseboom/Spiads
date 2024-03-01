@@ -77,5 +77,11 @@
 
             <button type="submit" class="btn btn-primary" [disabled]="!inschrijfForm.form.valid">Submit</button>
         </form>
+
+        <div *ngIf="show" class="toast-positie">
+            <ngb-toast header="{{toastHeader}}" [autohide]="true" [delay]="4000">
+                {{toastText}}
+            </ngb-toast>
+        </div>
     </div>
 </div>
