@@ -3,6 +3,8 @@ package nl.roy.spiads.domain;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Lid {
     @Id
@@ -26,6 +28,12 @@ public class Lid {
     @Column(columnDefinition="TEXT")
     private String handtekening;
 
+    @Column()
+    private String url;
+
+    @ManyToOne()
+    @JoinColumn(name = "school_id")
+    private School school;
 
     public void setId(long id) {
         this.id = id;
