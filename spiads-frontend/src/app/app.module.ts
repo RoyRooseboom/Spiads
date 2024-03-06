@@ -8,9 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignaturePadComponent } from './shared/signature-pad/signature-pad.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
-  declarations: [AppComponent, InschrijvenComponent, SignaturePadComponent],
+  declarations: [AppComponent, InschrijvenComponent, SignaturePadComponent, ErrorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
