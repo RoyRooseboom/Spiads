@@ -1,6 +1,7 @@
 package nl.roy.spiads.persistance;
 
 import nl.roy.spiads.domain.Lid;
+import nl.roy.spiads.domain.School;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,4 +11,6 @@ public class InschrijvenService {
     InschrijvenRepository inschrijvenRepository;
 
     public void addInschrijven(Lid lid) { inschrijvenRepository.save(lid); }
+
+
 }
