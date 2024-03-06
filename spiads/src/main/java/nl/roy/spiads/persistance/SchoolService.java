@@ -12,13 +12,10 @@ public class SchoolService {
     SchoolRepository schoolRepository;
 
     public String getUrlVanSchool(String url) {
-        System.out.println(schoolRepository.findByUrl(url).getUrl());
-
         try {
             return schoolRepository.findByUrl(url).getUrl();
         } catch(NullPointerException e) {
             return e.toString();
         }
-
     }
 }
